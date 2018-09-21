@@ -17,7 +17,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/thehandiest', toDo);
 
-let port = process.ENV.PORT || 3000;
+
+var port = process.env.PORT || 3000
+
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
+    console.log(process.env.port)
 });
