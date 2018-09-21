@@ -6,7 +6,7 @@ const toDo = require('./routes/to-do');
 
 const mongoose = require('mongoose');
 let dev_db_url = 'mongodb://sxiong:siaxiong1@ds111113.mlab.com:11113/todolist';
-let mongoDB = process.env.MONGODB_URI || 'mongodb://sxiong:siaxiong1@ds111113.mlab.com:11113/todolist'
+let mongoDB = dev_db_url
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
