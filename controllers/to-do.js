@@ -26,12 +26,12 @@ exports.create = function (req, res) {
 exports.update = (req, res) => {
     console.log(req.body)
     console.log(res)
-    ToDo.findByIdAndUpdate(req.params.id, {
-        text: req.body.text,
-        completed: req.body.completed,
-        details: req.body.details
-    }, {new: true})
-    .then(note => {
-        res.send(note)
-    })
+    // ToDo.findByIdAndUpdate(req.params._id, {
+    //     text: req.body.text,
+    //     completed: req.body.completed,
+    //     details: req.body.details
+    // }, {new: true})
+    // .then(note => {
+    //     res.send(note)
+    // })
 }
