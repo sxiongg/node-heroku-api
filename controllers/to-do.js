@@ -10,7 +10,8 @@ exports.create = function (req, res) {
     let toDo = new ToDo(
         {
             text: req.body.text,
-            // completed: req.body.completed
+            completed: false,
+            details: ''
         }
     );
 
@@ -21,3 +22,16 @@ exports.create = function (req, res) {
         res.send('To Do item created successfully.')
     })
 };
+
+exports.update = (req, res) => {
+    console.log(req.body)
+    console.log(res)
+    ToDo.findByIdAndUpdate(req.params.id, {
+        text: req.body.text,
+        completed: req.body.completed,
+        details: req.body.details
+    }, {new: true})
+    .then(note => {
+        res.send(note)
+    })
+}
